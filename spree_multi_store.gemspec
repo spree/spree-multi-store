@@ -26,6 +26,19 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
+  s.post_install_message = <<~MSG
+    --------------------------------------------------------------
+    Thank you for installing Spree Multi-Store!
+
+    This gem is licensed under AGPL-3.0-or-later.
+    To obtain a commercial license for your project,
+    check out Spree Enterprise:
+
+      https://spreecommerce.org/enterprise/
+
+    --------------------------------------------------------------
+  MSG
+
   spree_version = '>= 5.4.0.beta'
   s.add_dependency 'spree', spree_version
   s.add_dependency 'spree_admin', spree_version

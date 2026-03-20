@@ -10,6 +10,14 @@ Multi-store switching, custom domains, and store resolution for [Spree Commerce]
 - **Resource Scoping** — scope products, promotions, and payment methods to specific stores
 - **Store Creation Wizard** — admin UI for creating new stores with product/payment method imports
 
+# Multi-store vs Multi-tenant
+
+* Multi-Store setup is recommended for running multiple brands or multiple language versions of the same store
+* Multi-Tenant allows you to create a SaaS application with multiple tenants, each of them with their own Spree instance
+
+> [!TIP]
+> For a full [Multi-Tenant](https://spreecommerce.org/multi-tenant-white-label-ecommerce/) solution please [contact us](https://spreecommerce.org/get-started/) to obtain commercial license.
+
 ## Installation
 
 Add to your Gemfile:
