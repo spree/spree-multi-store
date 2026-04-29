@@ -109,6 +109,24 @@ RSpec.describe Spree::Store::MultiStoreMethods, type: :model do
     end
   end
 
+  describe '#storefront_url' do
+    let(:store) { create(:store, url: 'store.mysite.com') }
+
+    context 'without custom domain' do
+      it 'falls back to default storefront_url behavior' do
+        expect(store.storefront_url).to include('store.mysite.com')
+      end
+    end
+
+    context 'with custom domain' do
+      let!(:domain) { create(:custom_domain, store: store, url: 'custom.shop.com') }
+
+      it 'returns the formatted custom domain url' do
+        expect(store.reload.storefront_url).to include('custom.shop.com')
+      end
+    end
+  end
+
   describe 'product import on create' do
     let!(:product) { create(:product, stores: [default_store]) }
 
