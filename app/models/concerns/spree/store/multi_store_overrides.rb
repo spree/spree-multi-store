@@ -8,6 +8,10 @@ module Spree
       formatted_custom_domain || formatted_url
     end
 
+    def storefront_url
+      formatted_custom_domain || super
+    end
+
     def can_be_deleted?
       self.class.where.not(id: id).any?
     end
